@@ -1,0 +1,3 @@
+CREATE TABLE dc (id int auto_increment, name varchar(128) unique not null, descr varchar(1024));
+CREATE TABLE physical_server (id int auto_increment, name varchar(128) unique not null, descr varchar(1024), racks_id int references racks(id), case_size int check(case_size > 0), rack_location int);
+CREATE TABLE racks (id int auto_increment, name varchar(128) unique not null, descr varchar(1024), size int check (size > 0));
